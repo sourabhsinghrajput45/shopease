@@ -93,8 +93,6 @@ shopease/
 │   ├── tailwind.config.js
 │   └── package.json
 │
-├── database/
-│   └── setup.sql              # All CREATE TABLE + sample data
 │
 ├── QUICKSTART.md              # Step-by-step setup guide
 └── README.md                  # This file
@@ -168,5 +166,4 @@ Some ideas if you want to take it further:
 
 - Payments are in demo mode — no real charges
 - Product images use Unsplash (requires internet connection)
-- The demo user password is `demo1234`
 - Passwords are always hashed with bcrypt — never stored in plain text

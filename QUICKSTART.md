@@ -14,20 +14,15 @@ Get the project running in under 10 minutes.
 
 ## Step 1 — Database Setup
 
-```bash
-mysql -u root -p < database/setup.sql
+Create a databases named shopease and add these tables
 ```
-
-Or paste `database/setup.sql` into MySQL Workbench and run it.
-
-**Demo accounts (password for both: `demo1234`)**
-
-| Role     | Email                      |
-|----------|----------------------------|
-| Customer | customer@shopease.com      |
-| Seller   | seller@shopease.com        |
-
----
+users           → id, name, email, password, created_at
+categories      → id, name, slug
+products        → id, name, description, price, stock, image_url, category_id, is_featured, is_active, created_at
+orders          → id, user_id, total, status, shipping_address (JSON), payment_method, created_at
+order_items     → id, order_id, product_id, quantity, price
+reviews         → id, user_id, product_id, rating, comment, created_at
+```
 
 ## Step 2 — Configure Backend
 
