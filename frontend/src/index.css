@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-stone-50 text-stone-800 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-stone-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium
+           hover:bg-stone-700 active:bg-stone-900 transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply border border-stone-300 text-stone-700 px-5 py-2.5 rounded-lg text-sm font-medium
+           hover:bg-stone-100 transition-colors duration-150;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white px-5 py-2.5 rounded-lg text-sm font-medium
+           hover:bg-red-700 transition-colors duration-150;
+  }
+  .input {
+    @apply w-full border border-stone-300 rounded-lg px-3.5 py-2.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-stone-800 focus:border-transparent
+           placeholder:text-stone-400 bg-white transition-all duration-150;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-stone-200 shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f0efed 25%, #e8e7e4 50%, #f0efed 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 6px;
+}
+
+/* Smooth slide-down for dropdowns */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down { animation: slideDown 0.18s ease-out; }
+
+/* Status stepper line */
+.step-line { @apply h-0.5 flex-1 bg-stone-200; }
+.step-line.done { @apply bg-stone-800; }
+
+/* Range input */
+input[type='range'] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #d6d3d1;
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #292524;
+  cursor: pointer;
+}
